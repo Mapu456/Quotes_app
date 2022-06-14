@@ -78,7 +78,7 @@ function handleClick(){
         }
 		</form>
 	) : (
-		<login/>
+		<Login/>
 		)}
 	</div>
   )
