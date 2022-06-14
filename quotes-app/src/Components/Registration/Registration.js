@@ -9,7 +9,7 @@ function Registration() {
 	const [password, setPassword] = useState("");
 	const [flag, setflag] = useState(false);
 	const [login, setLogin] = useState(true);
-
+	
 function handleFormSubmit(e){
 	e.preventDefault();
 	// si alguno de estos campos no esta lleno entonces flag sera true y por ende entrara a la condicion de abajo (alert)
@@ -69,8 +69,12 @@ function handleClick(){
 				onChange={(event)=> setPassword(event.target.value)}
 				/>
 			</div>
-			<button type='submit' className='btn btn-dark btn-lg btn-block '>Register</button>
-			<p onClick={handleClick}>Already registered? Login in </p>
+			<div id="button" class="row">
+				<button type='submit'>Register</button>
+			</div>
+			<p className="forgot-password text-right">
+                Already registered? <a href="#" onClick={handleClick} >log in</a>
+            </p>
 		{flag &&
             <Alert color='primary' variant="danger" >
                 Please fill all fields!

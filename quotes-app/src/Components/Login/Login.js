@@ -47,7 +47,9 @@ function handleLogin(e) {
 						onChange={(event) => setPasswordlog(event.target.value)}
 					/>
 				</div>
-				<button type='submit' className='btn btn-dark btn-lg btn-block '>Login</button>
+				<div id="button" class="row">
+					<button type='submit'>Login</button>
+				</div>
 				{flag &&
 					<Alert color='primary' variant="danger" >
 						Please fill correctly all fields!

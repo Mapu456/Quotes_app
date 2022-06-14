@@ -5,7 +5,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 function App() {
   return (
     <div className="App">
-      <Registration/>
+      <div className="outer">
+        <div className="inner">
+          <Registration />
+        </div>
+      </div>
     </div>
   );
 }
