@@ -47,9 +47,12 @@ function handleLogin(e) {
 						onChange={(event) => setPasswordlog(event.target.value)}
 					/>
 				</div>
-				<div id="button" class="row">
+				<div id="button" className='row'>
 					<button type='submit'>Login</button>
 				</div>
+				<p className="forgot-password text-right">
+                	Already registered? <a href="#">log in</a>
+            	</p>
 				{flag &&
 					<Alert color='primary' variant="danger" >
 						Please fill correctly all fields!
