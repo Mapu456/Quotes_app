@@ -50,8 +50,8 @@ function handleLogin(e) {
 				<div id="button" className='row'>
 					<button type='submit'>Login</button>
 				</div>
-				<p className="forgot-password text-right">
-                	Already registered? <a href="#">log in</a>
+				<p className="forgot-password text-center">
+                	<a href="#">Sign up</a>
             	</p>
 				{flag &&
 					<Alert color='primary' variant="danger" >
