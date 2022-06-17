@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Alert} from 'react-bootstrap';
-import Login from '../Login/Login';
 import { v4 as uuidv4 } from 'uuid';
+import { createStore } from 'redux'
 
 function Registration() {
 	const [name, setName] = useState("");
@@ -9,32 +9,43 @@ function Registration() {
 	const [nickname, setNickname] = useState("");
 	const [password, setPassword] = useState("");
 	const [flag, setflag] = useState(false);
-	const [login, setLogin] = useState(true);
 	
 function handleFormSubmit(e){
-	// const arrayUsers = [];
+	//let userInfo = []
+	const arrayUsers = [];
 	e.preventDefault();
 	// si alguno de estos campos no esta lleno entonces flag sera true y por ende entrara a la condicion de abajo (alert)
 	if(!name || !email || !nickname || !password ) {
 		setflag(true)
 	} else {
 		setflag(false)
-		// arrayUsers.push({"uuid": uuidv4(), "Nickname":nickname, "Password": password})
-		// localStorage.setItem("ArrayUsers", JSON.stringify(arrayUsers));
-		localStorage.setItem("Nickname", JSON.stringify(nickname));
-		localStorage.setItem("Password", JSON.stringify(password));
+		// function todos(state = {}, action) {
+		// 	switch (action.type) {
+		// 		case 'ADD_TOD':
+		// 			userInfo.concat([state])
+		// 			return userInfo.concat([state])
+		// 		default:
+		// 			return state
+		// 	}
+		// }
+		
+		// const store = createStore(todos, {"uuid": uuidv4(), "Nickname":nickname, "Password": password})
+		
+		// store.dispatch({
+		// 	type: 'ADD_TOD',
+		// })
+		
+		// console.log(store.getState())
+		arrayUsers.push({"uuid": uuidv4(), "Nickname":nickname, "Password": password})
+		localStorage.setItem("ArrayUsers", JSON.stringify(arrayUsers));
+		// localStorage.setItem("UUID", JSON.stringify(uuidv4()));
+		// localStorage.setItem("Nickname", JSON.stringify(nickname));
+		// localStorage.setItem("Password", JSON.stringify(password));
 		console.log("Saved in local storage!");
-		setLogin(!login);
 	}
-}
-
-//si selecciono login in (es por que ya esta logueado) entonces login = false y se va para el componente Login y si no selecciono login es porque no esta logueado por ende la variable login= true entrara al componente register
-function handleClick(){
-	setLogin(!login);
 }
 	return (
 	<div>
-	{login ? (
 		<form onSubmit={handleFormSubmit}>
 			<h1>Register</h1>
 			<div className='form-group'>
@@ -77,7 +88,7 @@ function handleClick(){
 				<button type='submit'>Register</button>
 			</div>
 			<p className="forgot-password text-right">
-                Already registered? <a href="#" onClick={handleClick} >log in</a>
+                Already registered? <a href="#">log in</a>
             </p>
 		{flag &&
             <Alert color='primary' variant="danger" >
@@ -85,9 +96,6 @@ function handleClick(){
             </Alert>
         }
 		</form>
-	) : (
-		<Login/>
-		)}
 	</div>
   )
 }

@@ -1,12 +1,30 @@
 import React, { useState } from 'react'
 import {Alert} from 'react-bootstrap';
-import Home from '../Home/Home'
+import { createStore } from 'redux'
 
 function Login() {
+	let user = localStorage.getItem("ArrayUsers").replace(/"/g, "");
+function todos(state, action) {
+	switch (action.type) {
+		case 'ADD_TOD':
+			let userInfo = []
+			return userInfo.concat([state])
+		default:
+			return state
+	}
+}
+
+const store = createStore(todos, user)
+
+store.dispatch({
+	type: 'ADD_TOD',
+})
+
+console.log(store.getState())
+
 	const [nicknamelog, setNicknamelog] = useState("");
 	const [passwordlog, setPasswordlog] = useState("");
 	const [flag, setflag] = useState(false);
-	const [home, setHome] = useState(true);
 
 function handleLogin(e) {
 	e.preventDefault();
@@ -19,14 +37,12 @@ function handleLogin(e) {
 	} else if ( nicknamelog !== nick || passwordlog !== pass) {
 		setflag(true)
 	} else {
-		setHome(!home);
 		setflag(false);
 	}
 }
 
 	return (
 		<div>
-			{home ? (
 			<form onSubmit={handleLogin}>
 				<h1>Login</h1>
 				<div className='form-group'>
@@ -59,9 +75,6 @@ function handleLogin(e) {
 					</Alert>
 				} 
 			</form>
-		):(
-			<Home/>
-		)}
 		</div>
 	)
 }
