@@ -58,7 +58,7 @@ function Quote(props) {
   return (
     <div>
       <div className="quote-head">
-        <div>{view == "favQuotes" ? "Your favorite quotes" : "Quotes"}</div>
+        <div>{view === "favQuotes" ? "Your favorite quotes" : "Quotes"}</div>
         <GrClose onClick={closeDetailedQuote} />
       </div>
       <Card width={90} color="#82ccdd">
@@ -68,7 +68,7 @@ function Quote(props) {
           ) : (
             <div className="quote-interact">
               <div className="quote-msg-wrapper">
-                {view == "favQuotes"
+                {view === "favQuotes"
                   ? props.favoriteQuotes[currentFavoriteQuotesIndex]
                   : quote}
 
