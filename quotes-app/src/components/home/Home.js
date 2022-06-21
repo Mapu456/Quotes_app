@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Quote from "./quote/Quote";
 import Navbar from "./navbar/Navbar";
 import Categories from "./categories/Categories";

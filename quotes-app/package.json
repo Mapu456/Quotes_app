@@ -46,6 +46,9 @@
       "last 1 safari version"
     ]
   },
+  "overrides": {
+    "autoprefixer": "10.4.5"
+  },
   "devDependencies": {
     "sass": "^1.52.3"
   }

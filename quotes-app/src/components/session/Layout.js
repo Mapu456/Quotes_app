@@ -6,7 +6,7 @@ import Registration from "../registration/Registration";
 
 const Layout = () => {
   const [showLogin, setShowLogin] = useState(true);
-  const { userLoggedIn, loadingLogin, error } = useSelector(
+  const { userLoggedIn } = useSelector(
     (state) => state?.authReducer
   );
 
