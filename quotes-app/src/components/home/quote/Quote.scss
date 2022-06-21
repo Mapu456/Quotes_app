@@ -1,0 +1,32 @@
+.quote-head {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    font: 1.5em sans-serif;
+}
+
+.quote-wrapper {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font: 2em sans-serif;
+}
+
+.quote-msg-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-heart {
+    margin-top: 4px;
+}
+
+@media screen and (max-width: 500px) {
+    .quote-wrapper {
+        font: 1.5em sans-serif;
+    }
+}

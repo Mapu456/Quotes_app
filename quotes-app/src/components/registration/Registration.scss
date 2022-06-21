@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+
+    .register-button {
+      width: 90%;
+      border-radius: 25px;
+      height: 38px;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 500;
+      background: rgb(34, 193, 195);
+      background: linear-gradient(
+        90deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+      border: 0px;
+      cursor: pointer;
+      transition: opacity 0.25s ease-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }

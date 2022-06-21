@@ -1,24 +1,17 @@
-import './App.css';
-import Registration from './Components/Registration/Registration';
+import './App.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import Login from './Components/Login/Login';
-import Home from './Components/Home/Home';
-import Categories from './Components/Categories/categories'
+import Layout from "./components/session/Layout"
+import {useSelector} from "react-redux"
+import {useEffect} from "react"
 
-
-//hghg
 function App() {
-  return (
-    <div className="App">
-      <div className="outer">
-        <div className="inner">
-          <Registration />
-          <Login/>
-          <Home/>
-        </div>
-      </div>
-    </div>
-  );
+  
+  const persistedState = useSelector((state) => state.userSessionReducer)
+  useEffect(() => {
+    console.log(persistedState)
+    console.log( window.innerWidth)
+  }, [window.innerWidth])
+  return (<div className="app"><Layout /></div>);
 }
 
 export default App;

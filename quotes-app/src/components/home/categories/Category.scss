@@ -1,0 +1,40 @@
+$categoryBackground: #48dbfb;
+
+.category-wrapper {
+    // background-color: $categoryBackground;
+    text-align: center;
+
+    .category-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+    
+        .view-button {
+          width: 60%;
+          border-radius: 25px;
+          min-height: 35px;
+          font-size: 1rem;
+          color: white;
+          font-weight: 450;
+          background: rgb(34, 193, 195);
+          background: linear-gradient(
+            90deg,
+            rgba(34, 193, 195, 1) 0%,
+            rgba(253, 187, 45, 1) 100%
+          );
+          border: 0px;
+          cursor: pointer;
+          transition: opacity 0.25s ease-out;
+    
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+}
+
